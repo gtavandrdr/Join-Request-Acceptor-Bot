@@ -18,4 +18,4 @@
 - `/logout` : logout your telegram account 
 - `/broadcast` : reply this command to your broadcast message in bot.</b>
 
-Credit :- [Xclusive] (https://t.me/XclusiveO)
+Credit :- [Xclusive](https://t.me/XclusiveO)
