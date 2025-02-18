@@ -20,7 +20,7 @@ async def start_message(c,m):
         caption=f"<b>Hello {m.from_user.mention} 👋\n\nI Am Join Request Acceptor Bot. I Can Accept All Old Pending Join Request.\n\nFor All Pending Join Request Use - /accept</b>",
         reply_markup=InlineKeyboardMarkup(
             [[
-                InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/')
+                InlineKeyboardButton('💝 Telegram Channel', url='https://t.me/XclusivePRF')
             ],[
                 InlineKeyboardButton("❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ", url='https://t.me/XclusiveO'),
                 InlineKeyboardButton("🤖 ᴜᴘᴅᴀᴛᴇ", url='https://t.me/XclusiveO')
