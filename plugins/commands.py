@@ -1,6 +1,6 @@
 import asyncio 
 from pyrogram import Client, filters, enums
-from config import LOG_CHANNEL, API_ID, API_HASH, NEW_REQ_MODE, NOTIFICATION_CHAT_ID
+from config import LOG_CHANNEL, API_ID, API_HASH, NEW_REQ_MODE
 from plugins.database import db
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -14,7 +14,7 @@ Nᴀᴍᴇ - {}</b>
 # Function to send notification to a designated channel or user
 async def send_admin_notification(client, user_id, chat_id, chat_name):
     notification_message = f"🚀 New member approved: [{user_id}](tg://user?id={user_id}) in {chat_name}"
-    await client.send_message(NOTIFICATION_CHAT_ID, notification_message)
+    await client.send_message(LOG_CHANNEL, notification_message)
 
 @Client.on_message(filters.command('start'))
 async def start_message(c, m):
