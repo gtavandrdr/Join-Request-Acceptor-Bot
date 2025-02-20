@@ -79,3 +79,27 @@ async def approve_new(client, m):
     except Exception as e:
         print(str(e))
         pass
+        @app.on_chat_join_request(filters.group | filters.channel)
+async def notify_user_on_approval(client, join_request: Message):
+    user_id = join_request.from_user.id
+    chat_id = join_request.chat.id
+    chat_name = join_request.chat.title
+
+    try:
+        # Approve the join request
+        await client.approve_chat_join_request(chat_id, user_id)
+        
+        # Send a message to the user notifying them of the approval
+        notification_message = f"Hello {join_request.from_user.mention}, your request to join {chat_name} has been approved! Welcome to the community."
+        await client.send_message(user_id, notification_message)
+
+        print(f"Approval notification sent to {join_request.from_user.first_name} for {chat_name}.")
+    except Exception as e:
+        print(f"Failed to send approval notification: {str(e)}")
+
+@app.on_message(filters.command("start"))
+async def start(client, message: Message):
+    await message.reply("Hi there! I'm your friendly bot here to manage join requests.")
+
+app.run()
+pass
